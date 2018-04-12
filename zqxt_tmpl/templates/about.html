@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ABOUT</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="../static/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="../static/css/style.css" rel='stylesheet' type='text/css' />
+<link href="../static/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<script type="text/javascript" src="../static/js/move-top.js"></script>
+<script type="text/javascript" src="../static/js/easing.js"></script>
+    <script type="text/javascript" src="../static/js/jquery.min.js"></script>
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+<!--start-smoth-scrolling-->
+<!--start-top-nav-script-->
+		<script>
+            function del(){
+            if(confirm("logout?")){
+                window.open("{% url 'logout' %}");
+                    }
+            else{
+                     return false;
+                         }
+            }
+
+			$(function() {
+				var pull 		= $('#pull');
+					menu 		= $('nav ul');
+					menuHeight	= menu.height();
+				$(pull).on('click', function(e) {
+					e.preventDefault();
+					menu.slideToggle();
+				});
+				$(window).resize(function(){
+	        		var w = $(window).width();
+	        		if(w > 320 && menu.is(':hidden')) {
+	        			menu.removeAttr('style');
+	        		}
+	    		});
+			});
+
+			(function (win) {
+    $(function(){
+        $(win).scroll(function() {
+            // 浏览器窗口的高度 
+            var windowPageYOffset = win.pageYOffset;
+            // 浏览器窗口的高度 + 页面滚动的距离    
+            var windowPageYOffsetAddHeight = windowPageYOffset + window.innerHeight;
+            // 该值越小，越早触发效果，自己随便设置
+            var sensitivity = 0;
+  
+            var imgOffsetTop = $(".transImg").offset().top;
+            if (imgOffsetTop >= windowPageYOffset && imgOffsetTop < windowPageYOffsetAddHeight + sensitivity) {
+                // 达到一定位置，触发效果，透明度变为1
+                $(".transImg").css({
+                    "transform": "translate3d(0, 0, 0)",
+                    "-ms-transform": "translate3d(0, 0, 0)",
+                    "-o-transform": "translate3d(0, 0, 0)",
+                    "-webkit-transform": "translate3d(0, 0, 0)",
+                    "-moz-transform": "translate3d(0, 0, 0)",
+                    "opacity": 1
+                });
+            }
+        })
+    })
+}(window))
+		</script>
+<!--End-top-nav-script-->
+</head>
+<body>
+<!--start-header-->
+	<div class="header" id="home">
+		<div class="container">
+			<div class="head">
+			<div class="logo">
+				<img src="../static/images/logo.jpg" class="suspect" alt="" />
+			</div>
+			<div class="navigation">
+				 <span class="menu"></span> 
+					<ul class="navig">
+						   <li><a href={% url 'index' %} >Home</a></li>
+						<li><a href="{% url 'about' %}" class="active">About</a></li>
+						<li><a href={% url 'features' %} >Features</a></li>
+						<li><a href={% url 'work' %} >Work</a></li>
+						<li><a href={% url 'contact' %} >Contact</a></li>
+                         {% if acc_exist %}
+                      <li style="color: snow">Welcome {{ acc_name }}</li>
+                             <li><input type="button" onclick=del() value="logout"/></li>
+                        {% else %}
+                            <li><a href={% url 'login' %}>Login</a></li>
+                        {% endif %}
+					</ul>
+			</div>
+				<div class="clearfix"></div>
+			</div>
+			</div>
+		</div>	
+	<!-- script-for-menu -->
+	<!-- script-for-menu -->
+		 <script>
+              function del(){
+            if(confirm("确认删除吗")){
+                window.open("{% url 'logout' %}");
+                    }
+            else{
+                     return;
+                         }
+            }
+				$("span.menu").click(function(){
+					$(" ul.navig").slideToggle("slow" , function(){
+					});
+				});
+		 </script>
+		 <!-- script-for-menu -->
+	 <!--start-about-->
+	 <div class="about">
+	 	<div class="container">
+	 		<div class="about-main">
+	 			<h3>About Us</h3>
+	 			<div class="about-top">
+	 				<img src="../static/images/abt-1.jpg" alt="" />
+	 				<p>Donec iaculis ipsum non quam dictum vulputate. Mauris tincidunt nunc in magna dictum finibus. Fusce vulputate lobortis imperdiet. Mauris orci orci, tempus et convallis non, efficitur nec felis. Integer posuere accumsan laoreet. Aliquam erat volutpat.Nullam quis lorem iaculis, condimentum lectus at, egestas arcu. Aliquam at gravida magna.</p>
+	 				<p>Vestibulum ultricies purus egestas felis imperdiet, sit amet eleifend ex maximus. Sed aliquet elit ut nisi tempor, eu commodo nisi pretium. Pellentesque scelerisque, massa ac luctus lacinia, libero nibh iaculis nulla, non auctor eros metus sed mi.</p>
+	 			</div>
+	 		</div>
+	 	</div>
+	 </div>
+	 <!--start-about-->
+	 <!--start-team-->
+	 <div class="team">
+	 	<div class="container">
+	 		<div class="team-main">
+	 			<h3>Our Team</h3>
+	 			<div class="team-top">
+	 				<div class="col-md-3 team-left">
+	 					<img src="../static/images/team-1.jpg" alt="">
+	 					<h4>DAVID AUSTIN</h4>
+	 					<p>Etiam semper interdum massa, ut sagittis nisi aliquam non.</p>
+	 				</div>
+	 				<div class="col-md-3 team-left">
+	 					<img src="../static/images/team-2.jpg" alt="">
+	 					<h4>ALAN SMITH</h4>
+	 					<p>Etiam semper interdum massa, ut sagittis nisi aliquam non.</p>
+	 				</div>
+	 				<div class="col-md-3 team-left">
+	 					<img src="../static/images/team-3.jpg" alt="">
+	 					<h4>EVA ADAMSON</h4>
+	 					<p>Etiam semper interdum massa, ut sagittis nisi aliquam non.</p>
+	 				</div>
+	 				<div class="col-md-3 team-left">
+	 					<img src="../static/images/team-4.jpg" alt="">
+	 					<h4>THOMAS BISHOP</h4>
+	 					<p>Etiam semper interdum massa, ut sagittis nisi aliquam non.</p>
+	 				</div>
+	 				<video src="../static/uploads/introduce.mp4" controls="controls">您的浏览器不支持 video 标签。</video>
+	 				<div class="clearfix"></div>
+	 			</div>
+	 		</div>
+	 	</div>
+	 </div>
+	 <!--start-team-->
+
+
+	 <!--start-advn-->
+	 <div class="advn">
+	 	<div class="container">
+	 		<div class="advn-main">
+	 			<h3>Out Advantages</h3>
+	 			<div class="advn-top">
+	 				<div class="col-md-4 advn-left">
+	 					<span>1</span>
+	 					<h4>Duis sagittis gravida mauris, aliquet volutpat lorem ullamcorper ac</h4>
+	 					<p>Phasellus massa velit, dictum in nisi vitae, gravida cursus nibh. In at metus aliquet, gravida nunc eget, lacinia purus.</p>
+	 				</div>
+	 				<div class="col-md-4 advn-left">
+	 					<span>2</span>
+	 					<h4>Donec blandit condimentum varius. Mauris tincidunt, urna eleifend</h4>
+	 					<p>Phasellus massa velit, dictum in nisi vitae, gravida cursus nibh. In at metus aliquet, gravida nunc eget, lacinia purus.</p>
+	 				</div>
+	 				<div class="col-md-4 advn-left">
+	 					<span>3</span>
+	 					<h4> Proin velit risus, dapibus in purus at, ultricies suscipit neque.</h4>
+	 					<p>Phasellus massa velit, dictum in nisi vitae, gravida cursus nibh. In at metus aliquet, gravida nunc eget, lacinia purus.</p>
+
+	 				</div>
+	 				<div class="clearfix"></div>
+	 			</div>
+	 		</div>
+	 	</div>
+	 </div>
+	 <!--end-advn-->
+    <!--share-start-->
+	<input type="input" value="https://www.apple.com/" id="url1" readonly="readonly"/>
+    <input type="button" onClick="copyUrl()" value="Share" class="button-share"/>
+    <!--share-end-->
+
+	 <!--start-footer-->
+	 <div class="footer">
+	 	<div class="container">
+	 		<div class="footer-top">
+	 			<div class="footer-left">
+	 				<div class="footer-text">
+	 					<a href={% url 'about' %}>ABOUT</a>
+	 					<ul>
+	 						<li><a href="#">&Business Background</a></li>
+							<li><a href="#">&Business Culture</a></li>
+							<li><a href="#">&Business Spirit</a></li>
+							<li><a href="#">&Business Introduction</a></li>
+	 					</ul>
+	 				</div>
+	 				<div class="footer-text">
+	 					<a href={% url 'features' %}>Achievements</a>
+	 					<ul>
+	 						<li><a href="#">&Development course</a></li>
+							<li><a href="#">&Company sizes</a></li>
+							<li><a href="#">&The products</a></li>
+							<li><a href="#">&Intellectual property</a></li>
+	 					</ul>
+	 				</div>
+	 				<div class="footer-text">
+	 					<a href={% url 'work' %}>WORK</a>
+	 					<ul>
+	 						<li><a href="#">&News center</a></li>
+							<li><a href="#">&Talent concept</a></li>
+							<li><a href="#">&Development concept</a></li>
+							<li><a href="#">&Announcement</a></li>
+	 					</ul>
+	 				</div>
+	 				<div class="footer-text">
+	 					<a href={% url 'index' %}>SUPPORT</a>
+	 					<ul>
+	 						<li><a href="https://support.sonymobile.com/cn/">&sony mobile</a></li>
+							<li><a href="http://www.ecredence.com/">&ecredence</a></li>
+							<li><a href="http://www.hdpi.com.cn/webfront/">&hppi.china</a></li>
+							<li><a href="https://www.apple.com/">&apple</a></li>
+	 					</ul>
+	 				</div>
+	 				<div class="footer-text">
+	 					<a href={% url 'contact' %}>CONTACT</a>
+	 					<ul>
+	 						<li><a href="#">&Address:SEMC</a></li>
+                            <li><a href="#">&Postcodes:110064</a></li>
+							<li><a href="#">&Email:koushushin@sony.com</a></li>
+							<li><a href="#">&Phone:010-7788-5544</a></li>
+	 					</ul>
+	 				</div>
+	 			</div>
+	 			<div class="footer-right">
+	 				<ul>
+	 					<li><a href="#"><span class="fb"> </span></a></li>
+	 					<li><a href="#"><span class="twt"> </span></a></li>
+	 					<li><a href="#"><span class="in"> </span></a></li>
+	 					<li><a href="#"><span class="be"> </span></a></li>
+	 					<li><a href="#"><span class="drbl"> </span></a></li>
+	 				</ul>
+	 			</div>
+	 			<div class="clearfix"></div>
+	 			<div class="footer-bottom">
+	 				<p>Copyright &copy; 2017.Company koushushin All rights reserved.</p>
+	 			</div>
+	 		</div>
+	 	</div>
+         <script type="text/javascript">
+        function copyUrl() {
+        var Url = document.getElementById("url1");
+        Url.select(); // 选择对象
+        document.execCommand("Copy"); // 执行浏览器复制命令
+         alert("The url has been copied");
+}
+        </script>
+	 	<script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear' 
+								 		};
+										*/
+										
+										$().UItoTop({ easingType: 'easeOutQuart' });
+										
+									});
+								</script>
+		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	 </div>	
+	 <!--end-footer-->					 
+</body>
+</html>

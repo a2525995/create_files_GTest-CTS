@@ -1,0 +1,83 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Amaze UI Examples</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <link rel="stylesheet" href="../static/css/amazeui.min.css">
+  <link rel="stylesheet" href="../static/css/app.css">
+    <script type="text/javascript">
+
+	function Checkpassword(){
+  var pwd1=document.getElementById("p1").value;
+  var pwd2=document.getElementById("p2").value;
+ if(pwd1!=pwd2){
+    document.getElementById("errorpwd").style.display = "block";
+ }
+}
+</script>
+</head>
+<body>
+<div class="am-g myapp-login">
+	<div class="myapp-login-logo-block">
+		<div class="myapp-login-logo">
+			<i class="am-icon-jsfiddle"></i>
+		</div>
+		<div class="myapp-login-logo-text">
+			<div class="myapp-login-logo-text">
+				<span>S</span>ony
+				<div class="info">Find the best you in Sony.</div>
+			</div>
+		</div>
+
+
+		</div>
+		<div class="am-u-sm-10 login-am-center">
+			<form class="am-form" method="post" name="Register">
+                  {% csrf_token %}
+				<fieldset>
+					<div class="am-form-group">
+						<input type="text" name="account" id="doc-ipt-email-1" placeholder="Create your account" required oninvalid="setCustomValidity('must be fill in ！');" oninput="setCustomValidity('');">
+					</div>
+
+					<div class="am-form-group">
+						<input type="password"name = "password1" placeholder="Input your password" required="required">
+					</div>
+
+                    <div class="am-form-group">
+						<input type="password" name = "password2" onblur="Checkpassword()"  placeholder="Confirm your password" required="required">  <span id="errorpwd" style="display:none; color: #94df94">password are different!   retry to input</span>
+					</div>
+
+                    <div class="am-form-group">
+						<input type="email" name="email" id="doc-ipt-email-1" placeholder="Input your Email" required = "required">
+					</div>
+
+					<p><button type="submit" class="am-btn am-btn-default" value="Register">Register</button></p>
+				</fieldset>
+
+			</form>
+            <a href = {% url 'login' %}>	<span>Turn back to login in</span></a>
+		</div>
+	</div>
+</div>
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="../static/js/jquery.min.js"></script>
+
+<!--<![endif]-->
+
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="../static/js/amazeui.min.js"></script>
+<script src="../static/js/app.js"></script>
+</body>
+</html>

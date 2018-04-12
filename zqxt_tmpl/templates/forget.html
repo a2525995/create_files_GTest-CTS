@@ -1,0 +1,112 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Forget password</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <link rel="stylesheet" href="../static/css/amazeui.min.css">
+  <link rel="stylesheet" href="../static/css/app.css">
+    <link rel="stylesheet" href="../static/js/jquery.min.js">
+    <script type="text/javascript">
+{#     var wait = 60;#}
+{#        function time(btn) {#}
+{#            if (wait == 0) {#}
+{#                btn.removeAttribute("disabled");#}
+{#                btn.value = "Get code";#}
+{#                wait = 60;#}
+{#            } else {#}
+{#                btn.setAttribute("disabled", true);#}
+{#                btn.value = wait + "seconds after again";#}
+{#                wait--;#}
+{#                setTimeout(function () {#}
+{#                        time(btn);#}
+{#                    },#}
+{#                    1000)#}
+{#            }#}
+{#        }#}
+{#        function loadXMLDoc()#}
+{#{#}
+{#	var xmlhttp;#}
+{#	if (window.XMLHttpRequest)#}
+{#	{#}
+{#		xmlhttp=new XMLHttpRequest();#}
+{#	}#}
+{#	else#}
+{#	{#}
+{#		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");#}
+{#	}#}
+{#	xmlhttp.onreadystatechange=function()#}
+{#	{#}
+{#		if (xmlhttp.readyState==4 && xmlhttp.status==200)#}
+{#		{#}
+{##}
+{#			 $("#password3").val('6565656');#}
+{##}
+{#		}#}
+{#	}#}
+{#	xmlhttp.open("post","forget",true);#}
+{#	xmlhttp.send();#}
+
+
+
+</script>
+</head>
+<body>
+<div class="am-g myapp-login">
+	<div class="myapp-login-logo-block">
+		<div class="myapp-login-logo">
+			<i class="am-icon-jsfiddle"></i>
+		</div>
+		<div class="myapp-login-logo-text">
+			<div class="myapp-login-logo-text">
+				<span>S</span>ony
+				<div class="info">Find the best you in Sony.</div>
+			</div>
+		</div>
+
+
+		</div>
+		<div class="am-u-sm-10 login-am-center">
+			<form class="am-form" method="post" name="Register">
+                  {% csrf_token %}
+				<fieldset>
+					<div class="am-form-group">
+						<input type="text" name="account" id="username" placeholder="Create your account" required oninvalid="setCustomValidity('must be fill in ！');" oninput="setCustomValidity('');">
+					</div>
+
+					<div class="am-form-group">
+						<input type="email" name = "email" id="email" placeholder="Input your email for find back" required="required">
+					</div>
+
+                    <div class="am-form-group">
+						<input style="background-color: #94df94" id="van" type="submit" onclick="loadXMLDoc()"   value="Sent message to your Email">
+					</div>
+
+				</fieldset>
+
+			</form>
+            <a href = {% url 'login' %}>	<span>Turn back to login in</span></a>
+		</div>
+	</div>
+</div>
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="../static/js/jquery.min.js"></script>
+
+<!--<![endif]-->
+
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="../static/js/amazeui.min.js"></script>
+<script src="../static/js/app.js"></script>
+</body>
+</html>

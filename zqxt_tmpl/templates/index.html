@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HOME</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="../static/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="../static/css/style.css" rel='stylesheet' type='text/css' />
+<link href="../static/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<script type="text/javascript" src="../static/js/move-top.js"></script>
+<script type="text/javascript" src="../static/js/easing.js"></script>
+    <script type="text/javascript" src="../static/js/jquery.min.js"></script>
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+<!--start-smoth-scrolling-->
+<!--start-top-nav-script-->
+		<script>
+
+            function del(){
+            if(confirm("logout?")){
+                window.open("{% url 'logout' %}");
+                    }
+            else{
+                     return false;
+                         }
+            }
+
+			$(function() {
+				var pull 		= $('#pull');
+					menu 		= $('nav ul');
+					menuHeight	= menu.height();
+				$(pull).on('click', function(e) {
+					e.preventDefault();
+					menu.slideToggle();
+				});
+				$(window).resize(function(){
+	        		var w = $(window).width();
+
+	        		if(w > 320 && menu.is(':hidden')) {
+	        			menu.removeAttr('style');
+	        		}
+	    		});
+			});
+		</script>
+<!--End-top-nav-script-->
+</head>
+<body>
+<!--start-header-->
+	<div class="header" id="home">
+		<div class="container">
+			<div class="head">
+			<div class="logo">
+				<img src="../static/images/logo.jpg" alt="" class="suspect" />
+			</div>
+			<div class="navigation">
+				 <span class="menu"></span> 
+					<ul class="navig">
+						<li><a href={% url 'index' %}  class="active">Home</a></li>
+						<li><a href="{% url 'about' %}">About</a></li>
+						<li><a href={% url 'features' %}>Features</a></li>
+						<li><a href={% url 'work' %}>Work</a></li>
+						<li><a href={% url 'contact' %}>Contact</a></li>
+                        {% if acc_exist %}
+                            <li style="color: snow"><a href="{% url 'info' %}?{{ acc_name }}.php?">Welcome {{ acc_name }}</a></li>
+                            <li><input type="button" onclick=del() value="logout"/></li>
+                        {% else %}
+                            <li><a href={% url 'login' %}>Login</a></li>
+                        {% endif %}
+					</ul>
+			</div>
+				<div class="clearfix"></div>
+			</div>
+			</div>
+		</div>	
+	<!-- script-for-menu -->
+	<!-- script-for-menu -->
+		 <script>
+				$("span.menu").click(function(){
+					$(" ul.navig").slideToggle("slow" , function(){
+					});
+				});
+		 </script>
+		 <!-- script-for-menu -->
+	 <!--start-banner-->
+	 <div class="banner">
+	 	<div class="container">
+	 		<div class="banner-main">
+	 			<div class="col-md-6 banner-left">
+	 				<img src="../static/images/ph.png" alt="" />
+	 			</div>
+	 			<div class="col-md-6 banner-right">
+	 				<h1>We design fun</h1>
+	 				<h2>Ut In Nulla Enim. Phasellus Molestie Magna Non Est Non Venenatis ut In Nulla Enim. Phasellus Molestie.</h2>
+	 				<p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie tempor. Suspendisse dictum feugiat.</p>
+	 				<div class="b-btn">
+	 					<ul>
+	 					<span>You can&nbsp<li><a href="{% url 'contact' %}" class="contact">Contact us</a> <span> or </span></li>
+	 					<li><a href="{% url 'about' %}" class="work">See our work</a></li>
+                        </span>
+                        </ul>
+	 				</div>
+	 			</div>
+
+	 			<div class="clearfix">
+
+                </div>
+	 		</div>
+	 	</div>
+	 </div>
+	 <!--end-banner-->
+	 
+	 <!--start-lorem-->	
+	 <div class="lorem">
+	 	<div class="container">
+	 		<div class="lorem-top">
+	 			<div class="col-md-4 lorem-top-left">
+	 				<h3>There are <span>Imaging</span> ability</h3>
+	 				<ul>
+	 					<li><a href="#">Imagine a richer experience</a></li>
+	 					<li><a href="#">See what you’ve never seen before</a></li>
+	 					<li><a href="#">Be the first to discover 3D Creator</a></li>
+	 					<li><a href="#">Better colour, clarity and contrast</a></li>
+	 				</ul>
+	 				<div class="l-btn">
+	 					<a href="#">See more benefits</a>
+	 				</div>
+	 			</div>
+	 			<div class="col-md-8 lorem-top-right">
+	 				<h3>Lorem ipsum dolor <span>Sit amet!</span></h3>
+	 				<p>“Dive into an amazing world of entertainment powered by Sony technologies. With the Motion Eye™ camera and HDR display - everything becomes wow.Reveal more details than you’ve ever seen before. With the unique Super slow motion, footage is more dramatic than videos from other smartphones.1
+”</p>
+					<div class="lorem-top-bottom">
+						<h5>Vladimir Plutin</h5>
+						<label>President, Rambo man, World savior</label>
+					</div>
+					<img src="../static/images/men-1.png" alt="" />
+	 			</div>
+	 			<div class="clearfix"></div>
+	 		</div>
+	 		<div class="research">
+	 			<div class="col-md-4 res-left">
+	 				<img src="../static/images/res-1.png" alt="" />
+	 				<h4>Research</h4>
+	 				<p> And so intelligent it can respond to a tap, your voice, and even a glance. With iPhone X, that vision is a reality.  Say hello to the futureok also，you can.</p>
+	 				<div class="r-btn">
+	 					<a href="#">Read more</a>
+	 				</div>
+	 			</div>
+	 			<div class="col-md-4 res-left">
+	 				<img src="../static/images/res-2.png" alt="" />
+	 				<h4>Usability</h4>
+	 				<p>A tiny space houses some of the most sophisticated technology we’ve ever developed, including the cameras and sensors that enable Face ID. </p>
+	 				<div class="r-btn">
+	 					<a href="#">Read more</a>
+	 				</div>
+	 			</div>
+	 			<div class="col-md-4 res-left">
+	 				<img src="../static/images/res-3.png" alt="" />
+	 				<h4>Design</h4>
+	 				<p>The most durable glass ever in a smartphone, front and back. Surgical‑grade stainless steel. Wireless charging. Water and dust resistance with a good mean.</p>
+	 				<div class="r-btn">
+	 					<a href="#">Read more</a>
+	 				</div>
+	 			</div>
+	 			<div class="clearfix"></div>
+	 		</div>
+	 		<div class="target">
+	 			<div class="col-md-4 target-left">
+	 				<h3>Professional <span>target analyzing</span></h3>
+	 				<p>Phasellus sollicitudin gravida nisl, mollis feugiat metus tincidunt in. Pellentesque id sem convallis urna vehicula imperdiet. Aliquam venenatis commodo malesuada laoreet, pellentesque at mauris erat volutpat. </p>
+	 				<div class="t-btn">
+	 					<p>Estique<a href="#"> dova lormae</a></p>
+	 				</div>
+	 			</div>
+	 			<div class="col-md-4 target-left">
+	 				<h3>Stay focus and <span>reach your goal!</span></h3>
+	 				<p>Phasellus sollicitudin gravida nisl, mollis feugiat metus tincidunt in. Pellentesque id sem convallis urna vehicula imperdiet. Aliquam venenatis commodo malesuada laoreet, pellentesque at mauris erat volutpat. </p>
+	 				<div class="t-btn">
+	 					<p>Deu malou <a href="#">lelopa</a></p>
+	 				</div>
+	 			</div>
+	 			<div class="col-md-4 target-left">
+	 				<h3>Your data is <span>safe with us</span></h3>
+	 				<p>Phasellus sollicitudin gravida nisl, mollis feugiat metus tincidunt in. Pellentesque id sem convallis urna vehicula imperdiet. Aliquam venenatis commodo malesuada laoreet, pellentesque at mauris erat volutpat. </p>
+	 				<div class="t-btn">
+	 					<p>Sed vel <a href="#">aliquet es.</a></p>
+	 				</div>
+	 			</div>
+	 			<div class="clearfix"></div>
+	 		</div>
+	 		<div class="project">
+	 			<h3>Selected <span>projects</span></h3>
+	 			<div class="project-top">
+		 			<div class="col-md-3 project-left">
+		 				<img src="../static/images/project-1.jpg" alt="" />
+		 			</div>
+		 			<div class="col-md-3 project-left">
+		 				<img src="../static/images/project-2.jpg" alt="" />
+		 			</div>
+		 			<div class="col-md-3 project-left">
+		 				<img src="../static/images/project-3.jpg" alt="" />
+		 			</div>
+		 			<div class="col-md-3 project-left">
+		 				<img src="../static/images/project-4.jpg" alt="" />
+		 			</div>
+		 			<div class="clearfix"></div>
+	 			</div>
+
+	 		</div>
+	 	</div>
+	 </div>
+
+
+
+<div class="row">
+      <div class="col-md-8 col-md-offset-2">
+          <form class="form-inline" role="form"  method="post" enctype="multipart/form-data" accept-charset="utf-8">
+                {% csrf_token %}
+              <div class="form-group">
+                   {% csrf_token %}
+                  <input type="file" name="file" value="Browse...">
+              </div>
+              <div class="form-group">
+                  {% csrf_token %}
+                  <input type="submit" value="upload">
+              </div>
+          </form>
+      </div>
+  </div>
+	 <!--end-lorem-->
+	 <!--start-footer-->
+	 <div class="footer">
+	 	<div class="container">
+	 		<div class="footer-top">
+	 			<div class="footer-left">
+	 				<div class="footer-text">
+	 					<a href="{% url 'about' %}">ABOUT</a>
+	 					<ul>
+	 						<li><a href="#">&Business Background</a></li>
+							<li><a href="#">&Business Culture</a></li>
+							<li><a href="#">&Business Spirit</a></li>
+							<li><a href="#">&Business Introduction</a></li>
+	 					</ul>
+	 				</div>
+	 				<div class="footer-text">
+	 					<a href="{% url 'features' %}">Features</a>
+	 					<ul>
+	 						<li><a href="#">&Development course</a></li>
+							<li><a href="#">&Company sizes</a></li>
+							<li><a href="#">&The products</a></li>
+							<li><a href="#">&Intellectual property</a></li>
+	 					</ul>
+	 				</div>
+	 				<div class="footer-text">
+	 					<a href="{% url 'work' %}">WORK</a>
+	 					<ul>
+	 						<li><a href="#">&News center</a></li>
+							<li><a href="#">&Talent concept</a></li>
+							<li><a href="#">&Development concept</a></li>
+							<li><a href="#">&Announcement</a></li>
+	 					</ul>
+	 				</div>
+	 				<div class="footer-text">
+	 					<a href="#">SUPPORT</a>
+	 					<ul>
+	 						<li><a href="https://support.sonymobile.com/cn/">&sony mobile</a></li>
+							<li><a href="http://www.ecredence.com/">&ecredence</a></li>
+							<li><a href="http://www.hdpi.com.cn/webfront/">&hppi.china</a></li>
+							<li><a href="https://www.apple.com/">&apple</a></li>
+	 					</ul>
+	 				</div>
+	 				<div class="footer-text">
+	 					<a href="contact.html">CONTACT</a>
+	 					<ul>
+	 						<li><a href="#">&Address:SEMC</a></li>
+                            <li><a href="#">&Postcodes:110064</a></li>
+							<li><a href="#">&Email:koushushin@sony.com</a></li>
+							<li><a href="#">&Phone:010-7788-5544</a></li>
+	 					</ul>
+	 				</div>
+	 			</div>
+	 			<div class="footer-right">
+	 				<ul>
+	 					<li><a href="#"><span class="fb"> </span></a></li>
+	 					<li><a href="#"><span class="twt"> </span></a></li>
+	 					<li><a href="#"><span class="in"> </span></a></li>
+	 					<li><a href="#"><span class="be"> </span></a></li>
+	 					<li><a href="#"><span class="drbl"> </span></a></li>
+
+	 				</ul>
+	 			</div>
+	 			<div class="clearfix"></div>
+	 			<div class="footer-bottom">
+	 				<p>Copyright &copy; 2017 koushushin All rights reserved.</p>
+	 			</div>
+	 		</div>
+	 	</div>
+	 	<script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear' 
+								 		};
+										*/
+										
+										$().UItoTop({ easingType: 'easeOutQuart' });
+										
+									});
+								</script>
+		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	 </div>	
+	 <!--end-footer-->					 
+</body>
+</html>
